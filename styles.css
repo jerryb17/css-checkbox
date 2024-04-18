@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.custom-checkbox {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}
+.custom-checkbox + label {
+  display: flex;
+  align-content: center;
+}
+.custom-checkbox + label::before {
+  content: "";
+  width: 1.1em;
+  height: 1.1em;
+  border: 0.5px solid black;
+  border-radius: 0.15em;
+  margin-right: 15px;
+}
+.custom-checkbox + label:hover::before {
+  background-color: rgb(15, 15, 109);
+  cursor: pointer;
+}
+.custom-checkbox:disabled + label {
+  color: #aaa;
+}
+.custom-checkbox:disabled + label::before {
+  background-color: #aaa;
+  border: #999;
+  cursor: not-allowed;
+}
+.custom-checkbox:checked + label::before {
+  content: "\2714";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 109);
+  color: white;
+}
